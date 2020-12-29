@@ -2,14 +2,15 @@ import XCTest
 @testable import SwiftPlus
 
 final class SwiftPlusTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(SwiftPlus().text, "Hello, World!")
+
+    func testSequenceCompact() {
+        let optionalNumbers: [Int?] = [1, nil, 2, nil, 3]
+        let results: [Int] = optionalNumbers.compact()
+        let expected: [Int] = [1, 2, 3]
+        XCTAssertEqual(results, expected)
     }
 
     static var allTests = [
-        ("testExample", testExample),
+        ("testSequenceCompact", testSequenceCompact),
     ]
 }
