@@ -2,7 +2,7 @@
 //  Created by Daniel Inoa on 3/9/23.
 //
 
-extension Array {
+public extension Array {
 
     /// Sets the given value at the specified `writableKeyPath` for every array element.
     @discardableResult
