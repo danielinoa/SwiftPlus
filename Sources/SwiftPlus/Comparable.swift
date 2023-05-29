@@ -13,4 +13,14 @@ public extension Comparable {
     func clamped(within range: ClosedRange<Self>) -> Self {
         min(max(self, range.lowerBound), range.upperBound)
     }
+
+    /// Returns the value clamped within the specified range.
+    func clamped(within range: PartialRangeFrom<Self>) -> Self {
+        max(self, range.lowerBound)
+    }
+
+    /// Returns the value clamped within the specified range.
+    func clamped(within range: PartialRangeUpTo<Self>) -> Self {
+        min(self, range.upperBound)
+    }
 }
