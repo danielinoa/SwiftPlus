@@ -23,4 +23,9 @@ public extension Comparable {
     func clamped(within range: PartialRangeUpTo<Self>) -> Self {
         min(self, range.upperBound)
     }
+
+    /// Returns the value clamped within the specified range.
+    func clamped(within range: PartialRangeThrough<Self>) -> Self {
+        min(self, range.upperBound)
+    }
 }
