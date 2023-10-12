@@ -16,9 +16,4 @@ final class SequenceTests: XCTestCase {
         let expected = [1, 2, 3]
         XCTAssertEqual(result, expected)
     }
-
-    static var allTests = [
-        ("testSequenceCompact", testSequenceCompact),
-        ("testSequenceCompactCast", testSequenceCompactCast)
-    ]
 }
