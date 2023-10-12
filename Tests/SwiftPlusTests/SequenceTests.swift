@@ -1,7 +1,7 @@
 import XCTest
 @testable import SwiftPlus
 
-final class SwiftPlusTests: XCTestCase {
+final class SequenceTests: XCTestCase {
 
     func testSequenceCompact() {
         let elements: [Int?] = [1, nil, 2, nil, 3]
