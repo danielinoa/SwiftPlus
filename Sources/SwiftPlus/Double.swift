@@ -8,22 +8,8 @@ public extension Double {
 
     /// Returns this number raised to the power of the specified exponent.
     func exponentiated(to exponent: Int) -> Double {
-        Double.pow(base: self, exponent: exponent)
-    }
-
-    /// Returns the specified base raised to the power of the specified exponent.
-    /// - note: https://en.wikipedia.org/wiki/Exponentiation_by_squaring
-    private static func pow(base: Double, exponent: Int) -> Double {
-        if exponent < 0 {
-            1 / pow(base: base, exponent: -exponent)
-        } else if exponent == 0 {
-            1
-        } else if exponent.isEven {
-            pow(base: base * base, exponent: exponent / 2)
-        } else {
-            base * pow(base: base, exponent: exponent - 1)
-        }
-    }
+        exponentiate(base: self, exponent: exponent)
+    }    
 
     // MARK: - Rounding
 
