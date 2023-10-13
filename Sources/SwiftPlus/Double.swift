@@ -4,6 +4,42 @@
 
 public extension Double {
 
+    // MARK: - Exponentiation
+
+    /// Returns this number raised to the power of the specified exponent.
+    func exponentiated(to exponent: Int) -> Double {
+        Double.pow(base: self, exponent: exponent)
+    }
+
+    /// Returns the specified base raised to the power of the specified exponent.
+    /// - note: https://en.wikipedia.org/wiki/Exponentiation_by_squaring
+    private static func pow(base: Double, exponent: Int) -> Double {
+        if exponent < 0 {
+            1 / pow(base: base, exponent: -exponent)
+        } else if exponent == 0 {
+            1
+        } else if exponent.isEven {
+            pow(base: base * base, exponent: exponent / 2)
+        } else {
+            base * pow(base: base, exponent: exponent - 1)
+        }
+    }
+
+    // MARK: - Rounding
+
+    /// Returns a number rounded to the specified number of decimal places.
+    ///
+    /// Example:
+    /// - The number `3.141592` when rounded to 2 decimal places returns `3.14`
+    /// - The number `0.499` when rounded to 3 decimal places returns `0.499`
+    /// - The number `0.499` when rounded to 2 decimal places returns `0.50`
+    func rounded(fractionalDigits: Int) -> Self {
+        let multiplier: Double = 10.exponentiated(to: fractionalDigits)
+        return (self * multiplier).rounded() / multiplier
+    }
+
+    // MARK: - Scaling
+
     /// Returns the value, within the specified range, corresponding to the proportion denoted by `self`.
     /// - Example
     /// ```
