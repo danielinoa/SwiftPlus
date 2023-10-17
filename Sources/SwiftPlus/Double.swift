@@ -21,9 +21,9 @@ public extension Double {
     /// Returns a number rounded to the specified number of decimal places.
     ///
     /// Example:
-    /// - The number `3.141592` when rounded to 2 decimal places returns `3.14`
-    /// - The number `0.499` when rounded to 3 decimal places returns `0.499`
-    /// - The number `0.499` when rounded to 2 decimal places returns `0.50`
+    /// - `3.141592` rounded to 2 decimal places returns `3.14`
+    /// - `0.499` rounded to 3 decimal places returns `0.499`
+    /// - `0.499` rounded to 2 decimal places returns `0.50`
     func rounded(fractionalDigits: Int) -> Self {
         let multiplier: Double = 10 ** fractionalDigits
         return (self * multiplier).rounded() / multiplier
