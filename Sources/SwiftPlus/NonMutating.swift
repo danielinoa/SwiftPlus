@@ -24,11 +24,11 @@ public struct NonMutating<T> {
 
     // MARK: - Box
 
-    private class Box<T> {
+    private class Box<V> {
 
-        var value: T
+        var value: V
 
-        init(value: T) {
+        init(value: V) {
             self.value = value
         }
     }
