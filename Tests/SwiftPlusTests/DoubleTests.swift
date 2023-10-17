@@ -33,6 +33,14 @@ final class DoubleTests: XCTestCase {
         XCTAssertEqual(actual, expected)
     }
 
+    func test_exponentation_assignment_operator() {
+        var base: Double = 2
+        let exponent: Int = 3
+        let expected: Double = 8
+        base **= exponent
+        XCTAssertEqual(base, expected)
+    }
+
     // MARK: - Rounding
 
     func test_rounding_off() {

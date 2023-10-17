@@ -4,9 +4,14 @@
 
 public extension Double {
 
-    /// Returns this number raised to the power of the specified exponent.
+    /// Returns the base raised to the power of the specified exponent.
     static func ** (base: Double, exponent: Int) -> Double {
         Math.exponentiate(base: base, exponent: exponent)
+    }
+
+    /// Raises the base to the power of the specified exponent, and assigns it to the base.
+    static func **= (base: inout Double, exponent: Int) {
+        base = base ** exponent
     }
 
     // MARK: - Rounding

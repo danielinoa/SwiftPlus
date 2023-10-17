@@ -8,3 +8,5 @@ precedencegroup ExponentiativePrecedence {
 }
 
 infix operator ** : ExponentiativePrecedence
+
+infix operator **= : AssignmentPrecedence
