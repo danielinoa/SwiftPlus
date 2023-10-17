@@ -4,6 +4,8 @@
 
 public extension Double {
 
+    // MARK: - Exponentiation
+
     /// Returns the base raised to the power of the specified exponent.
     static func ** (base: Double, exponent: Int) -> Double {
         Math.exponentiate(base: base, exponent: exponent)
