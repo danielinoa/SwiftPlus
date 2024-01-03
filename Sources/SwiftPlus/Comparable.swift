@@ -11,7 +11,7 @@ public extension Comparable {
 
     /// Returns the value clamped within the specified range.
     func clamped(within range: ClosedRange<Self>) -> Self {
-        min(max(self, range.lowerBound), range.upperBound)
+        clamped(upTo: range.upperBound).clamped(downTo: range.lowerBound)
     }
 
     /// Returns the value clamped within the specified range.
@@ -27,5 +27,15 @@ public extension Comparable {
     /// Returns the value clamped within the specified range.
     func clamped(within range: PartialRangeThrough<Self>) -> Self {
         min(self, range.upperBound)
+    }
+
+    /// Returns the value clamped to the specified upper bound.
+    func clamped(upTo upperBound: Self) -> Self {
+        min(self, upperBound)
+    }
+
+    /// Returns the value clamped to the specified lower bound.
+    func clamped(downTo lowerBound: Self) -> Self {
+        max(self, lowerBound)
     }
 }
