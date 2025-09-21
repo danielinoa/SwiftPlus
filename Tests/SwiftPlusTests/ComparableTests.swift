@@ -1,29 +1,32 @@
-import XCTest
+import Testing
 @testable import SwiftPlus
 
-final class ComparableTests: XCTestCase {
+struct ComparableTests {
 
-    func testClampingWithinRange() {
+    @Test
+    func `test clamping within range`() {
         let number = 5
         let range = 0...10
         let result = number.clamped(within: range)
         let expected = 5
-        XCTAssertEqual(result, expected)
+        #expect(result == expected)
     }
 
-    func testClampingAboveUpperBound() {
+    @Test
+    func `test clamping above upper bound`() {
         let number = 15
         let range = 0...10
         let result = number.clamped(within: range)
         let expected = 10
-        XCTAssertEqual(result, expected)
+        #expect(result == expected)
     }
 
-    func testClampingBelowLowerBound() {
+    @Test
+    func `test clamping below lower bound`() {
         let number = -5
         let range = 0...10
         let result = number.clamped(within: range)
         let expected = 0
-        XCTAssertEqual(result, expected)
+        #expect(result == expected)
     }
 }
