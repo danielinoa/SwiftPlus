@@ -29,8 +29,8 @@ public enum Math {
     /// - Note: This is also known as Linear Interpolation or Lerp.
     public static func interpolate(proportion: Double, from start: Double, to end: Double) -> Double {
         let distance = end - start
-        let proportion = distance * proportion
-        return proportion + start
+        let displacement = distance * proportion
+        return displacement + start
     }
 
     /// Returns the proportion of the provided value within the specified range. In other words, it returns how much
@@ -43,6 +43,7 @@ public enum Math {
     /// - Note: This is also known as Inverse Linear Interpolation or Inverse Lerp.
     public static func proportion(of value: Double, from start: Double, to end: Double) -> Double {
         let distance = end - start
+        guard distance != 0 else { return 0 }
         let displacement = value - start
         return displacement / distance
     }

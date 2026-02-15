@@ -2,7 +2,7 @@
 //  Created by Daniel Inoa on 3/9/23.
 //
 
-/// A property wrapper that signals no mutation on assigment and
+/// A property wrapper that signals no mutation on assignment and
 /// prevents state modification of the instance it is called on.
 @propertyWrapper
 public struct NonMutating<T> {
